@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class SpecialCharacterPrinter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        
+        StringBuilder specialChars = new StringBuilder();
+        int count = 0;
+        
+        for (char ch : input.toCharArray()) {
+            if (!Character.isLetterOrDigit(ch) && !Character.isWhitespace(ch)) {
+                specialChars.append(ch).append(" ");
+                count++;
+            }
+        }
+        
+        System.out.println("Special characters: " + specialChars.toString().trim());
+        System.out.println("Number of special characters: " + count);
+        
+        scanner.close();
+    }
+}
