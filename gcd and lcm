@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class SimpleLCMAndGCD {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+
+        System.out.println("Enter the numbers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        int gcdResult = numbers[0];
+        int lcmResult = numbers[0];
+
+        for (int i = 1; i < n; i++) {
+            int a = gcdResult;
+            int b = numbers[i];
+            while (b != 0) {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            gcdResult = a;
+            lcmResult = (lcmResult * numbers[i]) / gcdResult;
+        }
+
+        System.out.println("GCD: " + gcdResult);
+        System.out.println("LCM: " + lcmResult);
+
+        scanner.close();
+    }
+}
