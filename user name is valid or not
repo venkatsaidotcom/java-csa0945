@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class UsernameValidator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the first username: ");
+        String n1 = scanner.nextLine();
+        
+        System.out.print("Enter the second username: ");
+        String n2 = scanner.nextLine();
+        
+        if (n1.equals(n2)) {
+            System.out.println("The usernames are valid and match.");
+        } else {
+            System.out.println("The usernames do not match.");
+        }
+        
+        scanner.close();
+    }
+}
